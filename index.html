@@ -11,98 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              navy: {
-                900: '#0B1221', /* Deep Midnight */
-                800: '#162440',
-              },
-              gold: {
-                300: '#E2D5BA', /* Pale Champagne */
-                400: '#C6A87C', /* Muted Luxury Gold */
-                500: '#A68A5F',
-                600: '#8C7325',
-              },
-              sand: {
-                50: '#F9F8F6', /* Crisp Off-white */
-                100: '#F2EFEC', /* Light Linen */
-                200: '#E8E4DE',
-              },
-              stone: {
-                800: '#2D2D2D',
-                500: '#787878'
-              }
-            },
-            animation: {
-              'fade-in': 'fadeIn 1s ease-out forwards',
-              'slow-spin': 'spin 10s linear infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-
-    <style>
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
-      
-      body {
-        background-color: #F9F8F6;
-        color: #0B1221;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Premium Noise Texture Overlay */
-      .bg-noise {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 50;
-        opacity: 0.04;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      }
-
-      ::selection {
-        background-color: #C6A87C;
-        color: #fff;
-      }
-    </style>
-    
     <!-- Schema.org Markup for Hotel -->
     <script type="application/ld+json">
     {
@@ -129,17 +37,21 @@
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "lenis/": "https://aistudiocdn.com/lenis@^1.3.15/"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "lenis/": "https://aistudiocdn.com/lenis@^1.3.15/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <div class="bg-noise"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
